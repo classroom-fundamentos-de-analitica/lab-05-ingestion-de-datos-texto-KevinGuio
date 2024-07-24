@@ -5,18 +5,18 @@ def generar_csv(path):
     '''Genera un csv con las oraciones y su 
     sentimiento en el path especificado'''
 
-    data = {"oración": [], "sentimiento": []}
+    data = {"phrase": [], "sentiment": []}
 
     # Recorrer cada archivo de texto y guarda la información en el diccionario
     for root, _, files in os.walk(path):
         for archivo in files:
             if archivo.endswith(".txt"):
                 with open(os.path.join(root, archivo), "r") as f:
-                    oración = f.read()
-                    data["oración"].append(oración)
+                    phrase = f.read()
+                    data["phrase"].append(phrase)
 
-                    sentimiento = os.path.basename(root)
-                    data["sentimiento"].append(sentimiento)
+                    sentiment = os.path.basename(root)
+                    data["sentiment"].append(sentiment)
     
     # Se crea el dataframe y el csv
     df = pd.DataFrame(data)
