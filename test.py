@@ -1,3 +1,5 @@
+"""GitHub Classroom autograding script."""
+
 import os.path
 
 import pandas as pd
