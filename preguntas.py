@@ -23,8 +23,8 @@ def generar_csv(path):
     name = path.replace("data/", "")
     df.to_csv(f"{name}_dataset.csv", index=False)
 
-if __name__ == "__main__":
-    generar_csv("data/train")
-    generar_csv("data/test")
-    #
+
+generar_csv("data/train")
+generar_csv("data/test")
+    
 
